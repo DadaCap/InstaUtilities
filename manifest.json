@@ -1,0 +1,30 @@
+{
+  "name": "Insta Utilities",
+  "version": "0.1.0",
+  "description": "An Instagram Chrome extension to replace emojis by their \"default\" versions if needed (\":)\", \"<3\", ...) and download voice messages from your DMs!\nMore features might come later...",
+  "permissions": ["storage", "tabs", "activeTab"],
+  "host_permissions": ["https://*.instagram.com/*", "https://*.fbsbx.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.instagram.com/*", "https://*.fbsbx.com/*"],
+      "js": ["instaScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "defaultSettings.json",
+        "assets/switch.png"
+      ],
+      "matches": ["https://*.instagram.com/*", "https://*.fbsbx.com/*"]
+    }
+  ],
+  "action": {
+    "default_title": "Insta Utilities",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}

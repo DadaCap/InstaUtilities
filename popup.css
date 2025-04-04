@@ -1,0 +1,186 @@
+body {
+    width: 400px;
+    height: 225px;
+    background: black;
+    background-image: linear-gradient(
+        145deg,
+        rgba(128,0,128, 0.2),
+        rgba(128,0,128, 0.3),
+        rgba(128,0,128, 0.4),
+        rgba(128,0,128, 0.5),
+        rgba(128,0,128, 0.6),
+        rgba(128,0,128, 0.7),
+        rgba(128,0,128, 0.8),
+        rgba(128,0,128, 0.9),
+        rgba(128,0,128, 1),
+        rgba(128,0,128, 0.9),
+        rgba(128,0,128, 0.8),
+        rgba(128,0,128, 0.7),
+        rgba(128,0,128, 0.6),
+        rgba(128,0,128, 0.5),
+        rgba(128,0,128, 0.4),
+        rgba(128,0,128, 0.3),
+        rgba(128,0,128, 0.2)
+    );
+    background-repeat: no-repeat;
+}
+.tools {
+    color: white;
+    padding: 1px 10px 1px 10px;
+}
+.VMText {
+    font-size: 25px;
+}
+.emojiBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 20px;
+}
+.emojiBox.main {
+    margin-top: 10px
+}
+.emojiTextBox {
+    flex: 1;
+    border-radius: 20px;
+    padding-left: 5px;
+    margin-right: 5px;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+}
+.emojiTextBox.main {
+    text-align: center;
+    border-radius: 40px;
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+}
+.emojiSwitch {
+    position: relative;
+    width: 32px;
+    height: 16px;
+}
+.emojiSwitch.main {
+    width: 64px;
+    height: 32px;
+}
+.emojiSwitchInput {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.emojiSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+.emojiSlider::before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+.emojiSlider.main::before {
+    height: 24px;
+    width: 24px;
+    left: 4px;
+    bottom: 4px
+}
+.emojiSwitchInput:checked + .emojiSlider {
+    background-color: #66bb6a;
+}
+.emojiSwitchInput:checked + .emojiSlider::before {
+    transform: translateX(16px)
+}
+.emojiSwitchInput.main:checked + .emojiSlider.main::before {
+    transform: translateX(32px);
+}
+.emojiPicture {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    margin-top: 1px;
+}
+.emojiPicture.main {
+    width: 32px;
+    height: 32px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px gray;
+    margin: 15px 0px 15px 0px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.6);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.5);
+}
+.tools-background {
+    overflow: auto;
+    overflow-x: hidden;
+    position: static;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 15px;
+    width: 380px;
+    height: 160px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+.top-bar {
+    display: flex;
+    border-radius: 5px;
+    height:35px;
+    background-image: linear-gradient(45deg, #122e44 20%, #507291 50%, #122e44 80%);
+    border-radius:20px;
+    padding:5px;
+}
+.tab { /* Pas activé */
+    background: transparent;
+    color: white;
+    flex: 1;
+    border:none;
+    border-radius: 20px;
+    margin: 2px;
+    cursor: pointer;
+    z-index: 1;
+}
+.tab-background {
+    flex: 1;
+    border:none;
+    background: linear-gradient(145deg, rgba(0, 54, 30, 0.85) 10%, rgba(72, 185, 128, 0.85) 50%, rgba(0, 54, 30, 0.85) 90%);
+    width: 190px;
+    height: 30px;
+    margin: 2px 2px 2px 2px;
+    position: absolute;
+    border-radius: 20px;
+    z-index: 0;
+}
+.tab.selected { /* Activé */
+    color: black;
+    cursor: default;
+}
+.tab:not(.selected):hover { /* Pas Activé, Souris */
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
